@@ -1,0 +1,27 @@
+
+<nav class="navbar">
+  <div class="navbar-brand">
+    {{> placemark-brand}}
+  </div>
+  <div class="navbar-menu" id="navMenu">
+    {{> loggedInUser-permission}}
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          {{#ifEquals user.permissions "ADMIN" }}
+          <a id="admin-dashboard" class="button " href="/admin-dashboard">Admin Dashboard</a>
+          {{/ifEquals}}
+          <a id="userCredentials-view" class="button" href="/user"> User Credentials </a>
+          <a id="dashboard" class="button" href="/dashboard"> Dashboard </a>
+          <a id="about" class="button" href="/about"> About </a>
+          <a id="logout" class="button" href="/logout"> Logout </a>
+        </div> 
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.getElementById("{{active}}").classList.add("is-primary");
+</script>
+

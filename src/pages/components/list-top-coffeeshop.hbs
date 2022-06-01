@@ -1,0 +1,43 @@
+<table class="table is-fullwidth">
+  <h1><b> Top Coffee Spots in the country as rated by {{user.firstName}} {{user.lastName}}</b></h1>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Coffee Shop Name</th>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th>Description</th>
+      <th>Rating</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each coffeeShop}}
+      <tr>
+        <td>
+          {{locationName}}
+        </td>
+        <td>
+          {{coffeeShopName}}
+        </td>
+        <td>
+          {{lat}}
+        </td>
+        <td>
+          {{lng}}
+        </td>
+        <td>
+          {{description}}
+        </td>
+        <td>
+          <b>{{rating}} / 5  </b>
+        </td>
+        <td>
+          <a href="/location/{{../location._id}}/deletecoffeeshop/{{_id}}" class="ui icon button">
+            <i class="fas fa-trash"></i>
+          </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

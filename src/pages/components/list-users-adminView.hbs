@@ -1,0 +1,44 @@
+<section class="section">
+    <h1 class="title">Coffee Shop List</h1>
+  <table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Coffee Shop Name</th>
+      <th>Added By</th>
+      <th>LAT</th>
+      <th>LON</th>
+      <th>Rating</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each coffeeShops}}
+      <tr>
+    
+        <td>
+          {{coffeeShopName}}
+        </td>
+        <td>
+          {{lat}}
+        </td>
+        <td>
+            {{lng}}
+        </td>
+        <td>
+          {{rating}}
+        </td>
+        <td>
+          {{description}}
+        </td>
+        <td>
+        <a href="/admin-dashboard/deletecoffeeshop/{{_id}}" class="button">
+            <i class="fas fa-trash"></i>
+        </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+  
+</section>

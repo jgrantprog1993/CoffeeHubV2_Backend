@@ -1,0 +1,32 @@
+<form class="box" action="/location/{{location._id}}/addCoffeeShop" method="POST">
+  <label>Enter Coffee Shop Details:</label>
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field">
+          <label class="label">Coffee Shop Name</label>
+        <input class="input" type="text" maxlength="8" pattern="[A-Za-z\s]+{1,20}" placeholder="Enter CoffeeShop Name" name="coffeeShopName">
+      </div>
+      <div class="field">
+          <label class="label">Latitude</label>
+        <input class="input" type="number" step="0.0001" min="-90.0000" max="90.0000" placeholder="Enter Lat" name="lat">
+      </div>
+      <div class="field">
+        <label class="label">Longitude</label>
+        <input class="input" type="number" step="0.0001" min="-180.0000" max="180.0000"placeholder="Enter Lng" name="lng">
+      </div>
+      <div class="field">
+          <label class="label">Descrip.</label>
+          
+              <input type="text" pattern="[A-Za-z\s]+{1,20}" name="description" value="Nice Coffee" readonly="true"></input>
+        
+      </div>
+      <div class="field">
+          <label class="label">Rating</label>
+          <div class="control">
+              <input class="input" type="hidden" step="0.01" min="0" max="5" placeholder="Out of 5 Stars?" name="rating" value=5>
+          </div>
+      </div>
+    </div>
+  </div>
+  <button class="button is-primary">Add Coffee Shop</button>
+</form>

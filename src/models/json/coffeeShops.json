@@ -1,0 +1,20 @@
+{
+  "coffeeShops": [
+    {
+      "coffeeShopName": "Cafe La COCO",
+      "lat": 52.65,
+      "lng": -7.2517,
+      "description": "Beside the Left Bank, very small",
+      "_id": "a2dd54d7-f9bf-4c00-828d-ea803b1fa4ce",
+      "locationid": "368d91b0-24a0-4431-8d09-a16c0decb7c1"
+    },
+    {
+      "coffeeShopName": "Face2",
+      "lat": 52.6532,
+      "lng": -7.253453,
+      "description": "Extra small flatwhites",
+      "_id": "1fc00de2-d3ab-4c84-bc15-3941cc5fa84f",
+      "locationid": "368d91b0-24a0-4431-8d09-a16c0decb7c1"
+    }
+  ]
+}

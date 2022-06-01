@@ -1,0 +1,38 @@
+<section class="section">
+    <h1 class="title">User List</h1>
+  <table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Permission Level</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+      <tr>
+        <td>
+          {{firstName}}
+        </td>
+        <td>
+          {{lastName}}
+        </td>
+        <td>
+            {{email}}
+        </td>
+        <td>
+          {{permissions}}
+        </td>
+        <td>
+        <a href="/admin-dashboard/deleteusers/{{_id}}" class="button">
+            <i class="fas fa-trash"></i>
+        </a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+  
+</section>

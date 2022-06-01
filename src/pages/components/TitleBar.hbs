@@ -1,0 +1,17 @@
+<div class="box has-text-centered columns m-2">
+  <div class="column">
+    <img src="/images/Icon.JPG" width="60" alt="img"/>
+  </div>
+  <div class="column">
+    <div class="title is-5"> {{title}} </div>
+    <div class="subtitle is-5"> {{subTitle}} </div>
+  </div>
+  <div class="column">
+    <i class="fa-solid fa-coffee-beans" style="color:rgb(95, 96, 173)"></i>
+    {{#if user}}
+      <div class="is-size-7">{{user.firstName}} {{user.lastName}}</div>
+    {{else}}
+      <div class="is-size-7">CoffeeHub Hapi 0.1</div>
+    {{/if}}
+  </div>
+</div>
