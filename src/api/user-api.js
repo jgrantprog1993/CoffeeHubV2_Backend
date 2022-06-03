@@ -92,4 +92,20 @@ export const userApi = {
     },
 
   },
+
+  findCoffeeShopsByUser: {
+    auth: {
+      strategy: "jwt",
+    },
+    handler: async function(request, h) {
+      try {
+        const coffeeShop = await db.coffeeShopStore.getCoffeeShopsByUserId(request.params.id);
+        console.log(coffeeShop)
+        return user;
+      } catch (err) {
+        return Boom.serverUnavailable("Database Error");
+      }
+    },
+
+  },
 };

@@ -81,7 +81,7 @@ export const seedData = {
       locationName: "Kildare",
     },
     Kilkenny: {
-      locationName: "Kilkenny,",
+      locationName: "Kilkenny",
     },
     Laois: {
       locationName: "Laois",

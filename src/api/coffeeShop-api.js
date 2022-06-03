@@ -1,6 +1,6 @@
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
-
+import {imageStore} from "../models/image-store.js"
 import { validationError } from "./logger.js";
 
 export const coffeeShopApi = {
@@ -130,5 +130,40 @@ export const coffeeShopApi = {
       maxBytes: 209715200,
       parse: true
     }
-  }
+  },
+
+  deleteImage:{
+    auth: {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      const coffeeShop = await db.coffeeShopStore.getCoffeeShopById(request.params.id);
+      console.log(`coffeeShop.img -> ${coffeeShop.img}`);
+      console.log(`coffeeShop.id 1-> ${request.params.id}`);
+      console.log(`coffeeShop.id 2-> ${coffeeShop._id}`);
+      // eslint-disable-next-line prefer-template
+      // console.log("request.payload.img ->" + request.payload);
+      // await imageStore.deleteImage(request.payload.img);
+      await db.coffeeShopStore.updateCoffeeShop(coffeeShop._id, "")
+      console.log("Attempted to Delte Image");
+      // coffeeShop.img = undefined;
+      return h.response().code(204);
+    }
+
+  },
+
+  getCoffeeShopsByUserId:{
+    auth: {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      try {
+        const coffeeShops = await db.coffeeShopStore.getCoffeeShopsByUserId(request.params.id);
+        return coffeeShops;
+      } catch (err) {
+        return Boom.serverUnavailable("Database Error");
+      }
+    },
+   
+  },
 };

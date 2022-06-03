@@ -25,6 +25,11 @@ export const coffeeShopMongoStore = {
     return null;
   },
 
+  async getCoffeeShopsByUserId(id) {
+    const coffeeShops = await CoffeeShop.find({ id: id }).lean();
+    return coffeeShops;
+  },
+
   async deleteCoffeeShop(id) {
     try {
       await CoffeeShop.deleteOne({ _id: id });
